@@ -49,7 +49,7 @@ function Game (char1, char2, char3, char4 ){
            charHolder.attr("data-char", characters.name);
            charHolder.attr("data-ap", characters.HealthPoints);
            charHolder.append("<img src='images/" + characters.name + ".jpg' width=150px height=150px />");
-           charHolder.append("<div class='ap'><h4>Health: "+ characters.HealthPoints +"</h4></div>");
+           charHolder.append("<div class='ap'><h4>Health: "+ characters.healthPoints +"</h4></div>");
            $("#main-container").append(charHolder);
         })
     }

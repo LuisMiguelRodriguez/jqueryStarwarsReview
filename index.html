@@ -20,12 +20,14 @@
 
 <script>
 
-var kenobi = new Character('Kenobi', 8, 120);
-var luke = new Character('Luke', 5, 100);
-var sidious = new Character('Sidious', 20, 105);
-var maul = new Character('Maul', 25, 180);
+var kenobi = new Character('kenobi', 8, 120);
+var luke = new Character('luke', 5, 100);
+var sidious = new Character('sidious', 20, 105);
+var maul = new Character('maul', 25, 180);
 
 var newGame = new Game(kenobi, luke, sidious, maul);
+
+newGame.load();
 
 
 
@@ -34,23 +36,35 @@ var newGame = new Game(kenobi, luke, sidious, maul);
 function Character (name, attack, health){
     this.name = name;
     this.attack = attack;
-    this.health = health;
+    this.healthPoints = health;
 }
 
 function Game (char1, char2, char3, char4 ){
     this.characters = [char1, char2, char3, char4];
     this.load = function() {
-        $.each(this.characters, function(index, value){
+        $.each(this.characters, function(i, characters){
+          console.log(characters)
           var charHolder = $("<div>");
            charHolder.addClass("characters");
-           charHolder.attr("data-char", this.characters[i].name);
-           charHolder.attr("data-ap", this.characters[i].HealthPoints);
-           charHolder.append("<img src='assets/images/" + this.characters[i].name + ".jpg' width=150px height=150px />");
-           charHolder.append("<div class='ap'><h4>Health: "+ this.characters[i].HealthPoints +"</h4></div>");
+           charHolder.attr("data-char", characters.name);
+           charHolder.attr("data-ap", characters.HealthPoints);
+           charHolder.append("<img src='images/" + characters.name + ".jpg' width=150px height=150px />");
+           charHolder.append("<div class='ap'><h4>Health: "+ characters.HealthPoints +"</h4></div>");
            $("#main-container").append(charHolder);
         })
     }
-    this.
+    this.pickCharacter = function(character){
+      this.mainCharacter = character;
+
+    }
+    this.dumdumb =
+      function () {
+        $('.toilet').append("chickenchickenchicken")
+        let hotdog = $('.myInput').val()
+        if(hotdog == "yoooo") {
+        alert("ya waddup?")
+        }
+      }
 }
 
 

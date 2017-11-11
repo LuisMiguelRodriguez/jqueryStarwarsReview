@@ -10,7 +10,39 @@
 </head>
 
 <body>
+    <div>
+        
+    </div>
 
 </body>
 
 </html>
+
+<script>
+
+var kenobi = new Character('Kenobi', 8, 120);
+var luke = new Character('Luke', 5, 100);
+var sidious = new Character('Sidious', 20, 105);
+var maul = new Character('Maul', 25, 180);
+
+var newGame = new Game(kenobi, luke, sidious, maul);
+
+
+
+
+
+function Character (name, attack, health){
+    this.name = name;
+    this.attack = attack;
+    this.health = health;
+} 
+
+function Game (char1, char2, char3, char4 ){
+    this.characters = [char1, char2, char3, char4];
+    this.load = function() {
+        
+    }
+}
+
+
+</script>

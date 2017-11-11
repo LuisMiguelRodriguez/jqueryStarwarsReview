@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div>
-        
+    <div id="main-container">
+
     </div>
 
 </body>
@@ -35,13 +35,22 @@ function Character (name, attack, health){
     this.name = name;
     this.attack = attack;
     this.health = health;
-} 
+}
 
 function Game (char1, char2, char3, char4 ){
     this.characters = [char1, char2, char3, char4];
     this.load = function() {
-        
+        $.each(this.characters, function(index, value){
+          var charHolder = $("<div>");
+           charHolder.addClass("characters");
+           charHolder.attr("data-char", this.characters[i].name);
+           charHolder.attr("data-ap", this.characters[i].HealthPoints);
+           charHolder.append("<img src='assets/images/" + this.characters[i].name + ".jpg' width=150px height=150px />");
+           charHolder.append("<div class='ap'><h4>Health: "+ this.characters[i].HealthPoints +"</h4></div>");
+           $("#main-container").append(charHolder);
+        })
     }
+    this.
 }
 
 
